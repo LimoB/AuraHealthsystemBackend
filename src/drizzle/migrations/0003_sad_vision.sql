@@ -1,0 +1,1 @@
+ALTER TABLE "appointmentsTable" DROP COLUMN "timeSlot";

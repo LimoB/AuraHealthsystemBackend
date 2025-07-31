@@ -1,0 +1,343 @@
+//Default Route 
+###
+GET http://localhost:5000/
+
+//----users---
+
+// Get all users (admin only)
+###
+GET http://localhost:5000/api/users
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4OTM2OTMsImlhdCI6MTc1MTg5MDA5M30.f1FFeTiiNEnSFXVXFEmhEXO-xgdN5OAvmihlvizOPGg
+
+// Get users by ID (all users)
+###
+GET http://localhost:5000/api/users/1
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Create a users (admin only)
+###
+POST http://localhost:5000/api/auth/register
+content-type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+{
+  "firstName": "Aska",
+  "lastName": "Kepha",
+  "email": "kephaaska@mail.com",
+  "password": "ascah",
+  "contactPhone": "01112644",
+  "address": "weeds"
+}
+
+# // register a users (admin only)
+# ###
+# POST http://localhost:5000/auth/register
+# content-type: application/json
+
+# # Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+# {
+#   "firstName": "Ascah",
+#   "lastName": "Kepha",
+#   "email": "kephaascah@mail.com",
+#   "password": "ascah",
+#   "userType": "admin"
+# }
+
+// Login a user
+###
+POST http://localhost:5000/api/auth/login
+content-type: application/json
+
+{
+  "email": "joshua@mail.com",
+  "password": "password123"
+}
+
+// Update a user (all users)
+###
+PUT http://localhost:5000/api/users/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "firstName": "Joshua",
+  "lastName": "Smith"
+}
+
+// Delete a user (admin only)
+###
+DELETE http://localhost:5000/api/users/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//---patients---
+
+// Get all patients (admin only)
+###
+GET http://localhost:5000/api/patients
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Get patients by ID (all users)
+###
+GET http://localhost:5000/api/patients/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Create a patients (admin only)
+###
+POST http://localhost:5000/api/patients
+content-type: application/json
+
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//Authorization: Bearer <your_token_here>
+{
+  "firstName": "Ascah",
+  "lastName": "Kepha",
+  "contactPhone": 070000,
+  "address": "baraka"
+  // "role": "member"
+}
+
+// Update a patient (admin only)
+###
+PUT http://localhost:5000/api/patients/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "firstName": "Debra",
+  "lastName": "N"
+}
+
+// Delete a patients (admin only) 
+###
+DELETE http://localhost:5000/api/patients/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//---Doctors---
+
+// Get all doctors (admin only)
+###
+GET http://localhost:5000/api/doctors
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Get doctors by ID (all users)
+###
+GET http://localhost:5000/api/doctors/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Create a doctors (admin only)
+###
+POST http://localhost:5000/api/doctors
+content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTIwNTQ0ODIsImlhdCI6MTc1MjA1MDg4Mn0.1Yav1Fbwx59RFiqwzcrCGFWiFZy-5vrDsbmRXd-XioQ
+
+{
+  "userId": 3,
+  "firstName": "Ascah",
+  "lastName": "Kepha",
+  "specialization": "Radiograph",
+  "contactPhone": "01112644",
+  "isAvailable": true
+}
+
+
+// Update a doctors (admin only)
+###
+PUT http://localhost:5000/api/doctors/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "firstName": "Purity",
+  "lastName": "K"
+}
+
+// Delete a doctors (admin only)
+###
+DELETE http://localhost:5000/api/doctors/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//---Appointments---
+
+// Get all appointments (admin only)
+###
+GET http://localhost:5000/api/appointments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+// Get appointments by ID (all users)
+###
+GET http://localhost:5000/api/appointments/1
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+//Get specific doctor appointments
+###
+GET http://localhost:5000/api/doctors/2/appointments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+//Get specific patient appointments
+###
+GET http://localhost:5000/api/patients/1/appointments
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+
+// Create an appointment (doctor )
+###
+POST http://localhost:5000/api/appointments
+content-type: application/json
+
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "appointmentDate": "2025-07-06",
+  "timeSlot": "01:00:00",
+  "totalAmount": 500.00,
+  "patientId": 1,
+  "doctorId": 1
+}
+
+// Update appointments (all users)
+###
+PUT http://localhost:5000/api/appointments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "appointmentDate": "2025-07-06",
+  "timeSlot": "01:30:00",
+  "totalAmount": 500.00,
+  "patientId": 1,
+  "doctorId": 1
+}
+
+
+// Delete a appointments (admin only)
+###
+DELETE http://localhost:5000/api/appointments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+
+//---Prescription---
+
+// Get all prescription (admin only)
+###
+GET http://localhost:5000/api/prescriptions
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Get prescription by ID (all users)
+###
+GET http://localhost:5000/api/prescriptions/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//Get specific doctor prescriptions
+###
+GET http://localhost:5000/api/doctors/2/prescriptions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+//Get specific patient prescriptions
+###
+GET http://localhost:5000/api/patients/1/prescriptions
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb3NodWFAbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJKb3NodWEiLCJsYXN0TmFtZSI6IlNtaXRoIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc1MzQzOTIzMCwiaWF0IjoxNzUzNDM1NjMwfQ.7IKMaQZBVjUrGmHcq7YRbPQX37XVsh0clFJN8o3-p6o
+
+
+// Create a prescription (doctor only)
+###
+POST http://localhost:5000/api/prescriptions
+content-type: application/json
+
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+{
+  "notes": "symptoms have depriciated"
+}
+
+// Update a prescription (doctor only)
+###
+PUT http://localhost:5000/api/prescriptions/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+"notes": "symptoms have depriciated"
+}
+
+// Delete a prescription (doctor only)
+###
+DELETE http://localhost:5000/api/prescriptions/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//---Payments---
+
+// Get all payments (admin only)
+###
+GET http://localhost:5000/api/payments
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Get payments by ID (all users)
+###
+GET http://localhost:5000/api/payments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Create a payments (admin only)
+###
+POST http://localhost:5000/api/payments
+content-type: application/json
+
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "transactionId": "SC2837",
+  "paymentDate": "2025-06-15"
+}
+
+// Update a payments (admin only)
+###
+PUT http://localhost:5000/api/payments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+  "transactionId": "SC2837"
+}
+
+// Delete a payments (admin only)
+###
+DELETE http://localhost:5000/api/payments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+//---Complaints---
+
+// Get all complaints (admin only)
+###
+GET http://localhost:5000/api/complaints
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// Get complaints by ID (all users)
+###
+GET http://localhost:5000/api/complaints/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+// get complaints by users Id (all users)
+###
+GET http://localhost:5000/api/users/2/complaints
+Authorization: wsdafsfhmjqwertyuiopasdfghjklzxcvbnmwertyuiopasdfghjklzxcvbnmwertyuioxcvbnmdfghjkc
+
+// Create a complaints (all users)
+###
+POST http://localhost:5000/api/complaints
+content-type: application/json
+
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+{
+"relatedAppointmentId": 2,
+"subject": "high medicine prices",
+"description": "I bought medicine at a doubleprice"
+}
+
+// Update a complaints (all users)
+###
+PUT http://localhost:5000/api/complaints/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
+{
+"subject": "missed a doctor"
+}
+
+// Delete a complaints (admin only) 
+###
+DELETE http://localhost:5000/api/complaints/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9zaHVhQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiSm9zaHVhIiwibGFzdE5hbWUiOiJTbWl0aCIsInVzZXJUeXBlIjoiYWRtaW4iLCJleHAiOjE3NTE4MDI5NzUsImlhdCI6MTc1MTc5OTM3NX0.SWn1NqL6OWbP3oze2Rj3yYPD--4via3FQw9WrMq-kx0
+
